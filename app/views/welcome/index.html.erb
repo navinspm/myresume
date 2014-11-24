@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+   <title>NavinKumar - ROR developer</title>
+   <meta name="navinspm resume ruby on rails developer" content="">
+   <meta name="NavinKumar" content="">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+   <!-- Favicons
+   ================================================== -->
+   <link rel="shortcut icon" href="favicon.png" >
+
+</head>
+
+<body>
+
+   <!-- Header
+   ================================================== -->
+   <header id="home">
+
+      <nav id="nav-wrap">
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+         <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav navbar">
+            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+            <li><a class="smoothscroll" href="#about">About</a></li>
+            <li><a class="smoothscroll" href="#resume">Resume</a></li>
+            <li><a class="smoothscroll" href="#portfolio">Works</a></li>
+            <li><a class="smoothscroll" href="#contact">Contact</a></li>
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+      <div class="row banner">
+         <div class="banner-text">
+            <h1 class="responsive-headline">I'm Navin Kumar.</h1>
+            <h3>I'm a Ruby on Rails  <span>web application developer</span>, <span>loving programmer </span> and  <span> open source lover </span> creating database backed web applications. Let's <a class="smoothscroll" href="#about">start scrolling</a>
+            and learn more <a class="smoothscroll" href="#about">about me</a>.</h3>
+            <hr />
+            <ul class="social">
+                <li><a href="http://facebook.com/navinspm"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="http://twitter.com/navinspm"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="http://www.plus.google.com/navinspm"><i class="fa fa-google-plus"></i></a></li>
+               <li><a href="http://linkedin.com/in/navinspm"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="http://instagram.com/navinspm"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="http://skype.com/navinspm"><i class="fa fa-skype"></i></a></li>
+            </ul>
+            </ul>
+         </div>
+      </div>
+
+      <p class="scrolldown">
+         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+      </p>
+
+   </header> <!-- Header End -->
+
+
+   <!-- About Section
+   ================================================== -->
+   <% @abouts.each do |about| %>
+   <section id="about">
+
+      <div class="row">
+
+         <div class="three columns">
+
+            <img class="profile-pic"  src="<%= about.image %>" alt="" />
+
+         </div>
+
+         <div class="nine columns main-col">
+
+            <h2>About Me</h2>
+
+            <p><%= about.about %>
+            </p>
+
+            <div class="row">
+
+               <div class="columns contact-details">
+
+                  <h2>Contact Details</h2>
+                  <p class="address">
+                     <span><%= about.name %></span><br>
+                     <span><%= about.address %>
+                     </span><br>
+                     <span><%= about.phone %></span><br>
+                     <span><%= about.email %></span>
+                  </p>
+
+               </div>
+
+               <div class="columns download">
+                  <p>
+                     <a href="<%= about.resume_url %>" class="button"><i class="fa fa-download"></i>Download Resume </a>
+                  </p>
+               </div>
+
+            </div> <!-- end row -->
+
+         </div> <!-- end .main-col -->
+
+      </div>
+
+   </section> <!-- About Section End-->
+<% end %>
+
+   <!-- Resume Section
+   ================================================== -->
+   <section id="resume">
+
+
+      <!-- Work
+      ----------------------------------------------- -->
+      
+      <div class="row work">
+
+         <div class="three columns header-col">
+            <h1><span>Work</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+         <% @works.each do |work| %>
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3><%= work.title %></h3>
+                  <p class="info"><%= work.role %><span>&bull;</span> <em class="date"><%= work.date %></em></p>
+
+                  <p>
+                 <%= work.description %>
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+          <% end %>
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Work -->
+
+      <!-- Education
+      ----------------------------------------------- -->
+      <div class="row education">
+
+         <div class="three columns header-col">
+            <h1><span>Education</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+         <% @education.each do |education| %>
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3> <%= education.title %></h3>
+                  <p class="info"> <%= education.course %><span>&bull;</span> <em class="date"><%= education.date %></em></p>
+
+                  <p>
+                 <%= education.descdescription %>
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+            <% end %>
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Education -->
+
+
+
+
+      <!-- Skills
+      ----------------------------------------------- -->
+      <div class="row skill">
+
+         <div class="three columns header-col">
+            <h1><span>Skills</span></h1>
+         </div>
+         <div class="nine columns main-col">
+            <p> May be next time , while you see this , I will add more</p>
+
+            <div class="bars">
+
+               <ul class="skills">
+                  <li><span class="bar-expand Ruby"></span><em>Ruby</em></li>
+                  <li><span class="bar-expand ROR"></span><em>Ruby on Rails</em></li>
+                  <li><span class="bar-expand Sinatra"></span><em>Sinatra</em></li>
+                  <li><span class="bar-expand Amazon"></span><em>Amazon Web Service</em></li>
+                  <li><span class="bar-expand Mysql"></span><em>Mysql</em></li>
+                  <li><span class="bar-expand html5"></span><em>HTML5</em></li>
+                  <li><span class="bar-expand css"></span><em>CSS3</em></li>
+                  <li><span class="bar-expand javascript"></span><em>javascript</em></li>
+                  <li><span class="bar-expand jquery"></span><em>Jquery</em></li>
+                  <li><span class="bar-expand Bootstrap"></span><em>Bootstrap</em></li>
+                  <li><span class="bar-expand Git"></span><em>Git</em></li>
+                  <li><span class="bar-expand HAML"></span><em>HAML</em></li>
+               </ul>
+
+            </div><!-- end skill-bars -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End skills -->
+
+   </section> <!-- Resume Section End-->
+
+
+   <!-- Portfolio Section
+   ================================================== -->
+   <section id="portfolio">
+   <div class="row">
+      <div class="twelve columns collapsed">
+         <h1>Check Out Some of My Works.</h1>
+
+            <% @portfolio.each do |folio| %>
+           
+                     <h4>Title:</h4>
+                     <h5><%= folio.title %></h5>
+                     <h4>About:</h4>
+                     <p><%= folio.desc %></p>
+                     <h4>Tools:</h4>
+                     <p><%= folio.tools %></p>
+            
+            <% end %>
+         </div>
+      </div> <!-- item end -->
+   </div>
+</section> <!-- Portfolio Section End-->
+
+
+   <!-- Contact Section
+   ================================================== -->
+   <section id="contact">
+
+         <div class="row section-head">
+
+            <div class="two columns header-col">
+
+               <h1><span>Get In Touch.</span></h1>
+
+            </div>
+
+            <div class="ten columns">
+
+                  <p class="lead">Contact me for Web development, Android, Iphone application development
+                  </p>
+
+            </div>
+
+         </div>
+
+         <div class="row">
+
+            <div class="eight columns">
+
+               <!-- form -->
+               <form action="" method="post" id="contactForm" name="contactForm">
+               <fieldset>
+
+                  <div>
+                     <label for="contactName">Name <span class="required">*</span></label>
+                     <input type="text" value="" size="35" id="contactName" name="contactName">
+                  </div>
+
+                  <div>
+                     <label for="contactEmail">Email <span class="required">*</span></label>
+                     <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
+                  </div>
+
+                  <div>
+                     <label for="contactSubject">Subject</label>
+                     <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
+                  </div>
+
+                  <div>
+                     <label for="contactMessage">Message <span class="required">*</span></label>
+                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                  </div>
+
+                  <div>
+                     <button class="submit">Submit</button>
+                     <span id="image-loader">
+                        <img alt="" src="images/loader.gif">
+                     </span>
+                  </div>
+
+               </fieldset>
+               </form> <!-- Form End -->
+
+               <!-- contact-warning -->
+               <div id="message-warning"> Error boy</div>
+               <!-- contact-success -->
+               <div id="message-success">
+                  <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+               </div>
+
+            </div>
+
+
+            <aside class="four columns footer-widgets">
+
+               <div class="widget widget_contact">
+
+                  <h4>Address and Phone</h4>
+                  <p class="address">
+                     1/173, First Street, Sothupakkam Melmaruvathur, Tamilnadu , India 603319 
+                     navinspm@gmail.com
+                     <span>(91) 9965202546</span>
+                  </p>
+
+               </div>
+
+               <div class="widget widget_tweets">
+
+                  <h4 class="widget-title">Latest Tweets</h4>
+
+                  <ul id="twitter">
+                    <a class="twitter-timeline" href="https://twitter.com/navinspm" data-widget-id="536765593249005570">Tweets by @navinspm</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                     </li>
+                  </ul>
+
+               </div>
+
+            </aside>
+
+      </div>
+
+   </section> <!-- Contact Section End-->
+
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">
+
+         <div class="twelve columns">
+
+            <ul class="social-links">
+             
+                <li><a href="http://facebook.com/navinspm"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="http://twitter.com/navinspm"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="http://www.plus.google.com/navinspm"><i class="fa fa-google-plus"></i></a></li>
+               <li><a href="http://linkedin.com/in/navinspm"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="http://instagram.com/navinspm"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="http://skype.com/navinspm"><i class="fa fa-skype"></i></a></li>
+         
+            </ul>
+
+            <ul class="copyright">
+               <li>&copy; Copyright 2014 NavinKumar</li>   
+            </ul>
+
+         </div>
+
+         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+
+      </div>
+
+   </footer> <!-- Footer End-->
+
+   <!-- Java Script
+   ================================================== -->
+
+  
+
+</body>
+
+</html>
