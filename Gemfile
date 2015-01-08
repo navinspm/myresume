@@ -32,3 +32,5 @@ gem 'rmagick'
 
 gem 'annotate'
 
+gem 'rails_12factor', group: :production
+
