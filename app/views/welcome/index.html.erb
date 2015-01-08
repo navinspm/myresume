@@ -227,20 +227,16 @@
    ================================================== -->
    <section id="portfolio">
    <div class="row">
-      <div class="twelve columns collapsed">
+     
          <h1>Check Out Some of My Works.</h1>
-
             <% @portfolio.each do |folio| %>
-           
-                     <h4>Title:</h4>
-                     <h5><%= folio.title %></h5>
+                     <h1><%= folio.title %></h1>
                      <h4>About:</h4>
                      <p><%= folio.desc %></p>
                      <h4>Tools:</h4>
                      <p><%= folio.tools %></p>
-            
             <% end %>
-         </div>
+        
       </div> <!-- item end -->
    </div>
 </section> <!-- Portfolio Section End-->
@@ -323,7 +319,7 @@
                   <p class="address">
                      1/173, First Street, Sothupakkam Melmaruvathur, Tamilnadu , India 603319 
                      navinspm@gmail.com
-                     <span>(91) 9965202546</span>
+                     <span>(91) 9965202545</span>
                   </p>
 
                </div>
@@ -367,7 +363,7 @@
             </ul>
 
             <ul class="copyright">
-               <li>&copy; Copyright 2014 NavinKumar</li>   
+               <li>&copy; Copyright <%= Time.now.year %> NavinKumar</li>   
             </ul>
 
          </div>
